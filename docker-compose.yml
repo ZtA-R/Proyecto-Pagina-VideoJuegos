@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./web:/usr/local/apache2/htdocs/ # Corregido para Apache (httpd)
+      - ./web:/usr/local/apache2/htdocs/
 
   node:
     image: node:16
@@ -20,7 +20,7 @@ services:
       MYSQL_USER: daw
       MYSQL_PASSWORD: iesmanacor
       MYSQL_DATABASE: practicavideojocs
-    ports: # Estaba mal indentado dentro de environment
+    ports:
       - "3306:3306"
     volumes:
       - ./volums/mysql:/var/lib/mysql
