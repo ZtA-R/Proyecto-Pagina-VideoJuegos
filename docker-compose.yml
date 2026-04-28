@@ -20,7 +20,7 @@ services:
       MYSQL_USER: daw
       MYSQL_PASSWORD: iesmanacor
       MYSQL_DATABASE: practicavideojocs
-    ports: # Estaba mal indentado dentro de environment
+    ports:
       - "3306:3306"
     volumes:
       - ./volums/mysql:/var/lib/mysql
