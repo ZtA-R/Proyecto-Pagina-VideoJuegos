@@ -5,7 +5,7 @@ services:
 
 
 web:
-  image: nginx:apline
+  image: httpd:2.4
   ports:
     - "80:80"
   volumes:
@@ -13,11 +13,27 @@ web:
 
 
 node:
-  build: ./node
+  image: node:16
   ports:
     - "3000:3000"
 
 
-BD:
-  image: mysql:8.0
-  
+db:
+  image: mariadb:10.7
+  environment:
+    MYSQL_ROOT_PASSWORD: iesmanacorroot
+    MYSQL_USER: daw
+    MYSQL_PASSWORD: iesmanacor
+    MYSQL_DATABASE: practicavideojocs
+    ports: 
+      - "3306:3306"
+    volumes:
+      - ./volums/mysql:/var/lib/mysql
+
+
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  ports:
+    - "8083:80"
+  environment:
+    PMA_HOST: db
