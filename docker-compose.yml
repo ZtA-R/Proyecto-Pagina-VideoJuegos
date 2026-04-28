@@ -1,39 +1,33 @@
 version: '3.8'
 
+services:
+  web:
+    image: httpd:2.4
+    ports:
+      - "80:80"
+    volumes:
+      - ./web:/usr/local/apache2/htdocs/ # Corregido para Apache (httpd)
 
-services: 
+  node:
+    image: node:16
+    ports:
+      - "3000:3000"
 
-
-web:
-  image: httpd:2.4
-  ports:
-    - "80:80"
-  volumes:
-    - ./web:/usr/share/nginx/html
-
-
-node:
-  image: node:16
-  ports:
-    - "3000:3000"
-
-
-db:
-  image: mariadb:10.7
-  environment:
-    MYSQL_ROOT_PASSWORD: iesmanacorroot
-    MYSQL_USER: daw
-    MYSQL_PASSWORD: iesmanacor
-    MYSQL_DATABASE: practicavideojocs
-    ports: 
+  db:
+    image: mariadb:10.7
+    environment:
+      MYSQL_ROOT_PASSWORD: iesmanacorroot
+      MYSQL_USER: daw
+      MYSQL_PASSWORD: iesmanacor
+      MYSQL_DATABASE: practicavideojocs
+    ports: # Estaba mal indentado dentro de environment
       - "3306:3306"
     volumes:
       - ./volums/mysql:/var/lib/mysql
 
-
-phpmyadmin:
-  image: phpmyadmin/phpmyadmin
-  ports:
-    - "8083:80"
-  environment:
-    PMA_HOST: db
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8083:80"
+    environment:
+      PMA_HOST: db
