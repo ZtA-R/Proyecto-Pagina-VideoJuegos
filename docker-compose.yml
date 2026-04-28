@@ -1,0 +1,23 @@
+version: '3.8'
+
+
+services: 
+
+
+web:
+  image: nginx:apline
+  ports:
+    - "80:80"
+  volumes:
+    - ./web:/usr/share/nginx/html
+
+
+node:
+  build: ./node
+  ports:
+    - "3000:3000"
+
+
+BD:
+  image: mysql:8.0
+  
