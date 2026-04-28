@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./web:/usr/local/apache2/htdocs/ # Corregido para Apache (httpd)
+      - ./web:/usr/local/apache2/htdocs/
 
   node:
     image: node:16
