@@ -1,0 +1,104 @@
+body {
+    display: flex;           
+    flex-direction: column;  
+    min-height: 100vh;
+    padding: 20px;
+    background-color: rgb(245, 243, 243);
+}
+.cabecera {
+     height: 100px;
+     border: 2px solid rgb(33, 33, 33);
+     box-shadow: none black;
+     border-radius: 15px;
+     background-color: white;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}   
+
+#miLogo{
+#img{
+    height: 90px;
+    width: 155px;
+    cursor: pointer;
+    padding: 5px;
+}
+}
+
+.links {
+  display: flex;             
+  list-style: none;          
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+  position: absolute;
+  right: 800px;
+  top: 75px;  
+  font-size: large;
+  cursor: pointer;
+}
+
+.links a {
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s; /* Esto hace que el cambio de color sea mas suave */
+}
+
+.links a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.footer {
+    margin-top: auto; 
+    height: 170px;
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 0 20px;     /* Para que el texto no toque los bordes */
+  
+}
+
+#LogoFacebook{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 710px;
+    right: 220px;
+}
+
+#LogoYT{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 695px;
+    right: 120px;
+}
+
+#LogoInsta{
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: 705px;
+    right: 50px;
+}
+
+#TextoFooter{
+    position: absolute;
+    top: 750px;
+    right: 120px;
+}
+
+#TextoFooterNombres{
+    position: absolute;
+    top: 769px;
+    right: 95px;
+}
+
+#TextoFooterC{
+    position: absolute;
+    top: 790px;
+    right: 139px;
+}
