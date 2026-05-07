@@ -12,6 +12,9 @@ services:
     image: node:16
     ports:
       - "3000:3000"
+    volumes:
+      - ./projecteVideojocs_back:/app
+    command: sh -c "npm install && node index.js"
 
   db:
     image: mariadb:10.7
