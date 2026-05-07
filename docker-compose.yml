@@ -10,10 +10,11 @@ services:
 
   node:
     image: node:16
+    working_dir: /app
     ports:
       - "3000:3000"
     volumes:
-      - ./projecteVideojocs_back:/app
+      - ./projecteVideojocs_server:/app
     command: sh -c "npm install && node index.js"
 
   db:
