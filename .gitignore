@@ -1,0 +1,4 @@
+# Ignorar los datos de la base de datos de Docker
+volums/
+node_modules/
+.env
