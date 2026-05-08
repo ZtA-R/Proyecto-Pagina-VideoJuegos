@@ -2,8 +2,8 @@ const config = {
     db: {
       host: "db",
       user: "daw",
-      password: "iesmanacorroot",
-      database: "practicavideojocs",
+      password: "iesmanacor",
+      database: "practicadaw",
     },
     listPerPage: 10,
   };

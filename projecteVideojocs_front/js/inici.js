@@ -1,4 +1,7 @@
 import {consultar} from "./api.js";
 
-const jocs = await consultar("SELECT * FROM videojocs");
-console.log(jocs);
+
+const jocs = "SELECT * FROM videojoc";
+let a=consultar(jocs);
+
+console.log(a);

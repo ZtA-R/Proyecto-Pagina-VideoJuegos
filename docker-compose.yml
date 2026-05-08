@@ -23,7 +23,7 @@ services:
       MYSQL_ROOT_PASSWORD: iesmanacorroot
       MYSQL_USER: daw
       MYSQL_PASSWORD: iesmanacor
-      MYSQL_DATABASE: practicavideojocs
+      MYSQL_DATABASE: practicadaw
     ports:
       - "3306:3306"
     volumes:
