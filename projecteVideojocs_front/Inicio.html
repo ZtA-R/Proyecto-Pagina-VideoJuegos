@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GameVerse, tu tienda online de videojuegos. Descubre nuestro catálogo, los mejores títulos y los creadores más destacados del mundo gaming.">
     <title>Inicio</title>
-    <link rel="stylesheet" href="./css/Inicio.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header class="cabecera">
@@ -13,30 +14,66 @@
         </div>
              <nav>
                 <ul class="links">
-                  <li><a href="Inicio.html">Inicio</a></li>
+                  <li><a href="Inicio.html" class="active">Inicio</a></li>
                   <li><a href="Producto.html">Productos</a></li>
                   <li><a href="Creadores.html">Creadores</a></li>
                   <li><a href="SobreNosotro.html">Sobre Nosotros</a></li>
                 </ul>
             </nav>
     </header>
+     <main>
+        <section class="portada">
+            <video autoplay muted loop playsinline class="video-portada">
+                <source src="assets/7249-199191048_medium.mp4" type="video/mp4">
+            </video>
+            <div class="contenido-portada">
+                <h1>GameVerse</h1>
+                <p>Tu universo de videojuegos, a un clic de distancia.</p>
+            </div>
+        </section>
 
-    <main>
+        <div class="parrafo">
+            <p>En GameVerse somos apasionados del mundo gaming. 
+                Nuestra tienda nació con el objetivo de reunir los mejores títulos de todos los géneros, 
+                conectando a los jugadores con los creadores que hay detrás de cada juego. 
+                Aquí encontrarás desde los grandes clásicos hasta las últimas novedades.</p>
+        </div>
 
+         <section class="ventajas">
+        <div class="tarjeta">
+            <img src="assets/caja-de-entrega.png" alt="Entrega rápida">
+            <h3>Entrega rápida</h3>
+            <p>Recibe tu pedido en menos de 24 horas.</p>
+        </div>
+        <div class="tarjeta">
+            <img src="assets/escudo-seguro.png" alt="Compra segura">
+            <h3>Compra segura</h3>
+            <p>Tus datos siempre protegidos.</p>
+        </div>
+        <div class="tarjeta">
+            <img src="assets/catalogar.png" alt="Catálogo premium">
+            <h3>Catálogo premium</h3>
+            <p>Más de 1200 videojuegos disponibles.</p>
+        </div>
+    </section>
     </main>
+
     <footer class="footer">
+    <div class="footer-contenido">
         <nav>
             <ul class="links">
-                <li><a href="https://www.facebook.com/TheWillyrexOficial/?locale=es_ES" target="_blank" ><img src="assets/LogoFacebook.png" alt="LogoFacebook" id="LogoFacebook" ></a></li>
-                <li><a href="https://www.youtube.com/user/Willyrex" target="_blank"><img src="assets/LogoYT.png" alt="" id="LogoYT"></a></li>
-                <li><a href="https://www.instagram.com/willyrex/?hl=es%20willyrex" target="_blank"><img src="assets/LogoInstagram.png" alt="" id="LogoInsta"></a></li>
-                <br>
-                <p id="TextoFooter">GameVerse</p>
-                <p id="TextoFooterNombres">Pere,James,Gabriel</p>
-                <p id="TextoFooterC">&copy2026</p>
+                <li><a href="https://www.facebook.com/TheWillyrexOficial/?locale=es_ES" target="_blank"><img src="assets/LogoFacebook.png" alt="Facebook" id="LogoFacebook"></a></li>
+                <li><a href="https://www.youtube.com/user/Willyrex" target="_blank"><img src="assets/LogoYT.png" alt="YouTube" id="LogoYT"></a></li>
+                <li><a href="https://www.instagram.com/willyrex/?hl=es%20willyrex" target="_blank"><img src="assets/LogoInstagram.png" alt="Instagram" id="LogoInsta"></a></li>
             </ul>
         </nav>
-    </footer>
+        <div class="footer-texto">
+            <p id="TextoFooter">GameVerse</p>
+            <p id="TextoFooterNombres">Pere, James, Gabriel</p>
+            <p id="TextoFooterC">©2026</p>
+        </div>
+    </div>
+</footer>
     <script type="module" src="./js/inici.js"></script>
 </body>
 </html>
