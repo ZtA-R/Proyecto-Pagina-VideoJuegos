@@ -53,7 +53,8 @@ function obtenirJocsDB (ordenacio, filtreCreador = null) {
 
 
 function crearContenidor (titol, preu, puntuacio_mitjana, creador) {
-    const v_div = document.createElement("div").classList.add("targeta_juego");
+    const v_div = document.createElement("div");
+    v_div.classList.add("targeta_juego");
 
     const v_img = document.createElement("img");
     v_img.src = "assets/gato-gato-sacando-la-lengua.png"
