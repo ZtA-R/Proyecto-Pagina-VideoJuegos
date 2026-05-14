@@ -25,7 +25,7 @@ services:
       MYSQL_PASSWORD: iesmanacor
       MYSQL_DATABASE: practicadaw
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - ./volums/mysql:/var/lib/mysql
 

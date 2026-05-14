@@ -283,3 +283,78 @@ main {
         grid-template-columns: 1fr; /*Esto lo que hace es poner una sola columna, para el movil*/
     }
 }
+
+/* Contenedor de todos los juegos */
+#llista_videojocs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* Cada tarjeta de juego */
+.targeta_juego {
+    background-color: white;
+    border-radius: var(--radio-borde);
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: row;  /* imagen a la izquierda, info a la derecha */
+    align-items: center;
+    padding: 12px;
+    gap: 16px;
+}
+
+/* Imagen pequeña */
+.targeta_img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;  /* que no se encoja */
+}
+
+/* Bloque de texto */
+.targeta_info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.targeta_info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+.targeta_creador {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.targeta_preu {
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--color-activo);
+}
+
+.targeta_puntuacio {
+    margin: 0;
+    font-size: 13px;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .targeta_juego {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .targeta_img {
+        width: 100%;
+        height: 150px;
+    }
+}
