@@ -1,7 +1,5 @@
 import {consultar} from "./api.js";
 
-const query = "SELECT CONCAT(c.nom, ' ', c.cognom) AS nom_creador, COUNT(vc.id_videojoc) AS total_videojocs FROM creador c INNER JOIN videojoc_creador vc ON vc.id_creador = c.id GROUP BY c.id, c.nom, c.cognom;"
-
 const selectGenere = document.querySelector("#ordenacio_genere");
 let genere = "tots";
 let tipusOrdenacio;
@@ -92,13 +90,18 @@ function crearContenidor(nom, nombre_jocs, idCreador) {
 }
 
 function traduirOrdre(valor) {
-const ordres = {
-        "num_jocs_desc": "total_videojocs DESC",
-        "num_jocs_asc": "total_videojocs ASC",
-        "alfabetic_asc": "nom_creador ASC",
-        "alfabetic_desc": "nom_creador DESC"
-};
-return ordres[valor] || "nom_creador ASC";
+        switch(valor) {
+                case "num_jocs_desc":
+                        return "total_videojocs DESC";
+                case "num_jocs_asc":
+                        return "total_videojocs ASC";
+                case "alfabetic_asc":
+                        return "nom_creador ASC";
+                case "alfabetic_desc":
+                        return "nom_creador DESC";
+                default:
+                        return "nom_creador ASC";
+        }
 }
 
 iniciar();
