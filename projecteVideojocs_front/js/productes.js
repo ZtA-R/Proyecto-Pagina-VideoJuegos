@@ -64,6 +64,7 @@ function crearContenidor (titol, preu, puntuacio_mitjana, creador) {
     v_creador.textContent = creador;
 
     document.querySelector("#llista_videojocs").appendChild(v_div);
+    v_div.appendChild(v_img);
     v_div.appendChild(v_titol);
     v_div.appendChild(v_preu);
     v_div.appendChild(v_puntuacio);
