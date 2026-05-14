@@ -24,7 +24,27 @@
         </nav>
     </header>
     <main>
-        
+        <select id="ordenacio">
+            <option value="">-- Tria com ordenar --</option>
+            <option value="num_jocs_desc">Nombre de jocs major a menor</option>
+            <option value="num_jocs_asc">Nombre de jocs menor a major</option>
+            <option value="alfabetic_asc">Alfabèticament A-Z</option>
+            <option value="alfabetic_desc">Alfabèticament Z-A</option>
+        </select>
+        <select id="ordenacio_genere">
+            <option value="">-- Tria gènere --</option>
+            <option value="accio">Acció</option>
+            <option value="aventura">Aventura</option>
+            <option value="rol">Rol (RPG)</option>
+            <option value="estrategia">Estratègia</option>
+            <option value="esports">Esports</option>
+            <option value="plataforma">Plataforma</option>
+            <option value="terror">Terror</option>
+            <option value="simulacio">Simulació</option>
+            <option value="Trencaclosques">Trencaclosques</option>
+            <option value="musica">Música</option>
+        </select>
+        <div id="llista_creadors"></div>
     </main>
     <footer class="footer">
     <div class="footer-contenido">
@@ -42,6 +62,7 @@
         </div>
     </div>
 </footer>
+<script type="module" src="./js/creadors.js"></script>
 </body>
 
 </html>
