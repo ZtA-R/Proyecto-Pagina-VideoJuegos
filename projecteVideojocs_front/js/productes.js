@@ -3,6 +3,16 @@ import { consultar } from "./api.js";
 const params = new URLSearchParams(window.location.search);
 const idCreador = params.get("creador");
 
+const boto_visual = document.querySelector("#btn-visual");
+boto_visual.addEventListener("click", function(){
+    const contenidors = document.querySelectorAll(".targeta_juego");
+
+    contenidors.forEach(function(c){
+        c.classList.toggle("targeta_juego_colu");
+    });
+});
+
+
 const select = document.querySelector("#ordenacio");
 select.addEventListener("change", async function (event) {
         const tipusOrdenacio = event.target.value;
