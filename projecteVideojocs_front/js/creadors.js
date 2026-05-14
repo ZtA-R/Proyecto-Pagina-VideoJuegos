@@ -44,7 +44,7 @@ function crearContenidor(nom, nombre_jocs, idCreador) {
         v_div.classList.add("targeta_juego");
 
         const v_a = document.createElement("a");
-        v_a.href = `productes.html?id=${idCreador}` //pendent de mirar
+        v_a.href = `Producto.html?id=${idCreador}`;
 
         const v_img = document.createElement("img");
         v_img.src = "assets/gato-gato-sacando-la-lengua.png"
