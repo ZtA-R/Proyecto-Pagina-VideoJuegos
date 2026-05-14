@@ -1,7 +1,7 @@
 import { consultar } from "./api.js";
 
 const params = new URLSearchParams(window.location.search);
-const idCreador = params.get("creador");
+const idCreador = params.get("id");
 
 const boto_visual = document.querySelector("#btn-visual");
 boto_visual.addEventListener("click", function(){
@@ -45,6 +45,16 @@ select.addEventListener("change", async function (event) {
                 crearContenidor(r.titol, r.preu, r.puntuacio_mitjana, r.creadors);
         });
 });
+
+async function iniciar() {
+        let resposta = await obtenirJocsDB("AVG(val.puntuacio) DESC", idCreador);
+        const divPrincipal = document.querySelector("#llista_videojocs");
+
+        resposta.forEach(function (r) {
+                crearContenidor(r.titol, r.preu, r.puntuacio_mitjana, r.creadors);
+        });
+}
+
 
 function obtenirJocsDB(ordenacio, filtreCreador = null) {
 
@@ -93,3 +103,5 @@ function crearContenidor(titol, preu, puntuacio_mitjana, creador) {
         v_div.appendChild(v_puntuacio);
         v_div.appendChild(v_creador);
 }
+
+iniciar();
