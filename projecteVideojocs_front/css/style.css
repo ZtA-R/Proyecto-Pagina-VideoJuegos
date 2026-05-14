@@ -358,3 +358,21 @@ main {
         height: 150px;
     }
 }
+
+/* Modo cuadrícula — el contenedor pasa a grid */
+#llista_videojocs.graella {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Las tarjetas en modo cuadrícula se ponen en columna */
+#llista_videojocs.graella .targeta_juego {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#llista_videojocs.graella .targeta_img {
+    width: 100%;
+    height: 150px;
+}
