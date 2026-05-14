@@ -133,7 +133,7 @@ main {
 
 .footer-texto {
     display: flex;
-    flex-direction: row;     /* GameVerse · Pere, James, Gabriel · ©2026 en fila */
+    flex-direction: row;     
     gap: 10px;
     align-items: center;
 }
