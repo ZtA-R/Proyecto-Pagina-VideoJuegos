@@ -1,6 +1,7 @@
 import {consultar} from "./api.js";
-let prova = await obtenirJocsDB("AVG(val.puntuacio) DESC");
-console.log(prova);
+
+const params = new URLSearchParams(window.location.search);
+const idCreador = params.get("creador");
 
 const select = document.querySelector("#ordenacio");
 select.addEventListener("change", async function(event){
@@ -9,25 +10,25 @@ select.addEventListener("change", async function(event){
 
     switch(tipusOrdenacio) {
         case "puntuacio_desc":
-                res = await obtenirJocsDB("AVG(val.puntuacio) DESC");
+                res = await obtenirJocsDB("AVG(val.puntuacio) DESC", idCreador);
                 break;
         case "puntuacio_asc":
-                res = await obtenirJocsDB("AVG(val.puntuacio) ASC");
+                res = await obtenirJocsDB("AVG(val.puntuacio) ASC", idCreador);
                 break;
         case "alfabetic_asc":
-                res = await obtenirJocsDB("v.titol ASC");
+                res = await obtenirJocsDB("v.titol ASC", idCreador);
                 break;
         case "alfabetic_desc":
-                res = await obtenirJocsDB("v.titol DESC");
+                res = await obtenirJocsDB("v.titol DESC", idCreador);
                 break;
         case "preu_asc":
-                res = await obtenirJocsDB("v.preu ASC");
+                res = await obtenirJocsDB("v.preu ASC", idCreador);
                 break;
         case "preu_desc":
-                res = await obtenirJocsDB("v.preu DESC");
+                res = await obtenirJocsDB("v.preu DESC", idCreador);
                 break;
         default:
-            res = await obtenirJocsDB("AVG(val.puntuacio) DESC");    
+            res = await obtenirJocsDB("AVG(val.puntuacio) DESC", idCreador);    
         }
 
         const divPrincipal = document.querySelector("#llista_videojocs");
@@ -38,8 +39,14 @@ select.addEventListener("change", async function(event){
         });
 });
 
-function obtenirJocsDB (ordenacio) {
-    const query = `SELECT v.titol, v.preu, AVG(val.puntuacio) AS puntuacio_mitjana, GROUP_CONCAT(DISTINCT c.nom, ' ', c.cognom SEPARATOR ', ') AS creadors FROM videojoc v LEFT JOIN valoracio val ON val.id_videojoc = v.id LEFT JOIN videojoc_creador vc ON vc.id_videojoc = v.id LEFT JOIN creador c ON c.id = vc.id_creador GROUP BY v.id, v.titol, v.preu ORDER BY ${ordenacio};`
+function obtenirJocsDB (ordenacio, filtreCreador = null) {
+
+    let where = "";
+    if (filtreCreador) {
+        where = `WHERE c.id = ${filtreCreador}`;
+    }
+
+    const query = `SELECT v.titol, v.preu, AVG(val.puntuacio) AS puntuacio_mitjana, GROUP_CONCAT(DISTINCT c.nom, ' ', c.cognom SEPARATOR ', ') AS creadors FROM videojoc v LEFT JOIN valoracio val ON val.id_videojoc = v.id LEFT JOIN videojoc_creador vc ON vc.id_videojoc = v.id LEFT JOIN creador c ON c.id = vc.id_creador ${where} GROUP BY v.id, v.titol, v.preu ORDER BY ${ordenacio};`
 
     return consultar(query);
 }
