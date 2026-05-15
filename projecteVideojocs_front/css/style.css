@@ -1,4 +1,3 @@
-
 :root {
     --color-fondo: rgb(245, 243, 243);
     --color-blanco: white;
@@ -7,6 +6,8 @@
     --color-activo: #007bff;
     --radio-borde: 15px;
 }
+
+
 
 
 body {
@@ -20,6 +21,8 @@ body {
 }
 
 
+
+
 .cabecera {
     height: 100px;
     border: 2px solid var(--color-borde);
@@ -31,6 +34,7 @@ body {
     padding: 0 15px;
 }
 
+
 #miLogo #img {
     height: 90px;
     width: 155px;
@@ -38,11 +42,13 @@ body {
     padding: 5px;
 }
 
+
 .cabecera nav {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
+
 
 .cabecera nav .links {
     display: flex;
@@ -55,16 +61,20 @@ body {
     position: static;
 }
 
+
 .links a {
     text-decoration: none;
     color: var(--color-texto);
     transition: color 0.3s, border-bottom 0.3s;
 }
 
+
 .links a:hover {
     text-decoration: underline;
     color: var(--color-activo);
 }
+
+
 
 
 .links a.active {
@@ -74,10 +84,15 @@ body {
 }
 
 
+
+
 main {
-    flex: 1; 
+    flex: 1;
     padding: 20px 0;
 }
+
+
+
 
 
 
@@ -92,12 +107,15 @@ main {
     box-sizing: border-box;
 }
 
+
 .footer-contenido {
     display: flex;
-    flex-direction: column;  /* logos arriba, texto abajo */
+    flex-direction: column;
+    /* logos arriba, texto abajo */
     align-items: center;
     gap: 10px;
 }
+
 
 .footer nav .links {
     display: flex;
@@ -108,20 +126,24 @@ main {
     align-items: center;
 }
 
+
 #LogoFacebook {
     height: 50px;
     width: 50px;
 }
+
 
 #LogoYT {
     height: 80px;
     width: 80px;
 }
 
+
 #LogoInsta {
     height: 60px;
     width: 60px;
 }
+
 
 #TextoFooter,
 #TextoFooterNombres,
@@ -131,12 +153,15 @@ main {
     color: var(--color-texto);
 }
 
+
 .footer-texto {
     display: flex;
-    flex-direction: row;     
+    flex-direction: row;
     gap: 10px;
     align-items: center;
 }
+
+
 
 
 @media (max-width: 768px) {
@@ -147,6 +172,7 @@ main {
         gap: 10px;
     }
 
+
     .cabecera nav .links {
         gap: 10px;
         font-size: medium;
@@ -154,10 +180,12 @@ main {
         justify-content: center;
     }
 
+
     #miLogo #img {
         height: 60px;
         width: 110px;
     }
+
 
     .footer {
         flex-direction: column;
@@ -167,25 +195,30 @@ main {
         align-items: center;
     }
 
+
     .footer nav .links {
         justify-content: center;
     }
+
 
     #LogoFacebook {
         height: 35px;
         width: 35px;
     }
 
+
     #LogoYT {
         height: 55px;
         width: 55px;
     }
+
 
     #LogoInsta {
         height: 40px;
         width: 40px;
     }
 }
+
 
 .portada {
     position: relative;
@@ -198,6 +231,7 @@ main {
     margin-bottom: 20px;
 }
 
+
 .video-portada {
     position: absolute;
     top: 0;
@@ -205,25 +239,32 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: blur(4px) brightness(0.5); /* Filtros para el video difuminado etc */ 
-    transform: scale(1.05); /* Para evitar bordes blancos*/
+    filter: blur(4px) brightness(0.5);
+    /* Filtros para el video difuminado etc */
+    transform: scale(1.05);
+    /* Para evitar bordes blancos*/
 }
 
+
 .contenido-portada {
-    position: relative; /* para que el texto quede encima del video */
+    position: relative;
+    /* para que el texto quede encima del video */
     text-align: center;
     color: white;
 }
+
 
 .contenido-portada h1 {
     font-size: 48px;
     margin: 0 0 10px;
 }
 
+
 .contenido-portada p {
     font-size: 20px;
     margin: 0;
 }
+
 
 .parrafo {
     background-color: rgba(255, 255, 255, 0.551);
@@ -232,37 +273,47 @@ main {
     margin-bottom: 20px;
 }
 
+
 .parrafo p {
-    font-size: 20px;    
-    line-height: 1.8;        
+    font-size: 20px;
+    line-height: 1.8;
     color: var(--color-texto);
-    text-align: justify;     /*Ajusta el texto*/
-    max-width: 800px;        
-    margin: 0 auto;         
+    text-align: justify;
+    /*Ajusta el texto*/
+    max-width: 800px;
+    margin: 0 auto;
 }
+
+
 
 
 .ventajas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas del mismo tamaño */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columnas del mismo tamaño */
     gap: 20px;
     margin-bottom: 20px;
 }
 
+
 .tarjeta {
     background-color: white;
-    border-radius: var(--radio-borde);  /*Cogemos el ajuste de la variable y se la aplicamos*/
+    border-radius: var(--radio-borde);
+    /*Cogemos el ajuste de la variable y se la aplicamos*/
     padding: 30px 20px;
     text-align: center;
     border: 1px solid #e0e0e0;
 }
 
+
 .tarjeta img {
     height: 60px;
     width: 60px;
     margin-bottom: 15px;
-    object-fit: contain;  /*Para no deformar la imagen*/
+    object-fit: contain;
+    /*Para no deformar la imagen*/
 }
+
 
 .tarjeta h3 {
     font-size: 18px;
@@ -271,6 +322,7 @@ main {
     color: var(--color-texto);
 }
 
+
 .tarjeta p {
     font-size: 14px;
     color: #666;
@@ -278,11 +330,14 @@ main {
     margin: 0;
 }
 
+
 @media (max-width: 768px) {
     .ventajas {
-        grid-template-columns: 1fr; /*Esto lo que hace es poner una sola columna, para el movil*/
+        grid-template-columns: 1fr;
+        /*Esto lo que hace es poner una sola columna, para el movil*/
     }
 }
+
 
 /* Contenedor de todos los juegos */
 #llista_videojocs {
@@ -292,17 +347,20 @@ main {
     margin-top: 20px;
 }
 
+
 /* Cada tarjeta de juego */
 .targeta_juego {
     background-color: white;
     border-radius: var(--radio-borde);
     border: 1px solid #e0e0e0;
     display: flex;
-    flex-direction: row;  /* imagen a la izquierda, info a la derecha */
+    flex-direction: row;
+    /* imagen a la izquierda, info a la derecha */
     align-items: center;
     padding: 12px;
     gap: 16px;
 }
+
 
 /* Imagen pequeña */
 .targeta_img {
@@ -310,8 +368,10 @@ main {
     height: 80px;
     object-fit: cover;
     border-radius: 8px;
-    flex-shrink: 0;  /* que no se encoja */
+    flex-shrink: 0;
+    /* que no se encoja */
 }
+
 
 /* Bloque de texto */
 .targeta_info {
@@ -320,6 +380,7 @@ main {
     gap: 4px;
 }
 
+
 .targeta_info h3 {
     margin: 0;
     font-size: 16px;
@@ -327,11 +388,13 @@ main {
     color: var(--color-texto);
 }
 
+
 .targeta_creador {
     margin: 0;
     font-size: 13px;
     color: #666;
 }
+
 
 .targeta_preu {
     margin: 0;
@@ -340,11 +403,13 @@ main {
     color: var(--color-activo);
 }
 
+
 .targeta_puntuacio {
     margin: 0;
     font-size: 13px;
     color: #888;
 }
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -353,19 +418,20 @@ main {
         align-items: flex-start;
     }
 
+
     .targeta_img {
         width: 100%;
         height: 150px;
     }
 }
 
-/* Modo cuadrícula — el contenedor pasa a grid */
+/* Modo cuadrícula */
 #llista_videojocs.graella {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-/* Las tarjetas en modo cuadrícula se ponen en columna */
+/* Tarjetas en modo cuadrícula */
 #llista_videojocs.graella .targeta_juego {
     flex-direction: column;
     align-items: center;
