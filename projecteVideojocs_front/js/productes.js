@@ -72,7 +72,7 @@ function obtenirJocsDB(ordenacio, filtreCreador = null) {
                 where = `WHERE c.id = ${filtreCreador}`;
         }
 
-        const query = `SELECT v.titol, v.preu, AVG(val.puntuacio) AS puntuacio_mitjana, GROUP_CONCAT(DISTINCT c.nom, ' ', c.cognom SEPARATOR ', ') AS creadors FROM videojoc v LEFT JOIN valoracio val ON val.id_videojoc = v.id LEFT JOIN videojoc_creador vc ON vc.id_videojoc = v.id LEFT JOIN creador c ON c.id = vc.id_creador ${where} GROUP BY v.id, v.titol, v.preu ORDER BY ${ordenacio};`
+        const query = `SELECT v.titol, v.preu, ROUND(AVG(val.puntuacio),2) AS puntuacio_mitjana, GROUP_CONCAT(DISTINCT c.nom, ' ', c.cognom SEPARATOR ', ') AS creadors FROM videojoc v LEFT JOIN valoracio val ON val.id_videojoc = v.id LEFT JOIN videojoc_creador vc ON vc.id_videojoc = v.id LEFT JOIN creador c ON c.id = vc.id_creador ${where} GROUP BY v.id, v.titol, v.preu ORDER BY ${ordenacio};`
 
         return consultar(query);
 }
