@@ -3,14 +3,12 @@ import { consultar } from "./api.js";
 const params = new URLSearchParams(window.location.search);
 const idCreador = params.get("id");
 
-// Botón de visualización — alterna entre lista y cuadrícula
 const boto_visual = document.querySelector("#btn-visual");
 boto_visual.addEventListener("click", function () {
     const llista = document.querySelector("#llista_videojocs");
     llista.classList.toggle("graella");
 });
 
-// Selector de ordenación
 const select = document.querySelector("#ordenacio");
 select.addEventListener("change", async function (event) {
     const tipusOrdenacio = event.target.value;
@@ -47,7 +45,6 @@ select.addEventListener("change", async function (event) {
     });
 });
 
-// Carga inicial de los juegos
 async function iniciar() {
     let resposta = await obtenirJocsDB("AVG(val.puntuacio) DESC", idCreador);
 
@@ -56,20 +53,17 @@ async function iniciar() {
     });
 }
 
-// Consulta a la base de datos con ordenación y filtro opcional por creador
 function obtenirJocsDB(ordenacio, filtreCreador = null) {
     let where = "";
     if (filtreCreador) {
         where = `WHERE c.id = ${filtreCreador}`;
     }
 
-    // ROUND para mostrar la puntuación con 2 decimales
     const query = `SELECT v.titol, v.preu, ROUND(AVG(val.puntuacio),2) AS puntuacio_mitjana, GROUP_CONCAT(DISTINCT c.nom, ' ', c.cognom SEPARATOR ', ') AS creadors FROM videojoc v LEFT JOIN valoracio val ON val.id_videojoc = v.id LEFT JOIN videojoc_creador vc ON vc.id_videojoc = v.id LEFT JOIN creador c ON c.id = vc.id_creador ${where} GROUP BY v.id, v.titol, v.preu ORDER BY ${ordenacio};`
 
     return consultar(query);
 }
 
-// Crea una tarjeta de juego y la añade al contenedor
 function crearContenidor(titol, preu, puntuacio_mitjana, creador) {
     const v_div = document.createElement("div");
     v_div.classList.add("targeta_juego");
